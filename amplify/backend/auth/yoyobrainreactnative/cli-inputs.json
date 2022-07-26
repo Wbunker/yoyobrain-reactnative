@@ -1,0 +1,97 @@
+{
+  "version": "1",
+  "cognitoConfig": {
+    "identityPoolName": "yoyobrainreactnative_identitypool",
+    "allowUnauthenticatedIdentities": true,
+    "resourceNameTruncated": "yoyobr56054ea9",
+    "userPoolName": "yoyobrainreactnative_userpool",
+    "autoVerifiedAttributes": [
+      "email"
+    ],
+    "mfaConfiguration": "OPTIONAL",
+    "mfaTypes": [
+      "SMS Text Message",
+      "TOTP"
+    ],
+    "smsAuthenticationMessage": "Your authentication code is {####}",
+    "smsVerificationMessage": "Your verification code is {####}",
+    "emailVerificationSubject": "Your verification code",
+    "emailVerificationMessage": "Your verification code is {####}",
+    "defaultPasswordPolicy": true,
+    "passwordPolicyMinLength": "8",
+    "passwordPolicyCharacters": [
+      "Requires Lowercase",
+      "Requires Uppercase",
+      "Requires Numbers",
+      "Requires Symbols"
+    ],
+    "requiredAttributes": [
+      "email",
+      "name"
+    ],
+    "aliasAttributes": [],
+    "userpoolClientGenerateSecret": false,
+    "userpoolClientRefreshTokenValidity": 30,
+    "userpoolClientWriteAttributes": [
+      "address",
+      "birthdate",
+      "family_name",
+      "gender",
+      "locale",
+      "phone_number",
+      "picture",
+      "profile",
+      "updated_at",
+      "website",
+      "email",
+      "name"
+    ],
+    "userpoolClientReadAttributes": [
+      "address",
+      "birthdate",
+      "family_name",
+      "gender",
+      "locale",
+      "phone_number",
+      "picture",
+      "profile",
+      "updated_at",
+      "website"
+    ],
+    "userpoolClientLambdaRole": "yoyobr56054ea9_userpoolclient_lambda_role",
+    "userpoolClientSetAttributes": true,
+    "sharedId": "56054ea9",
+    "resourceName": "yoyobrainreactnative",
+    "authSelections": "identityPoolAndUserPool",
+    "useDefault": "manual",
+    "thirdPartyAuth": true,
+    "authProviders": [
+      "graph.facebook.com",
+      "accounts.google.com",
+      "www.amazon.com",
+      "appleid.apple.com"
+    ],
+    "usernameAttributes": [
+      "email"
+    ],
+    "userPoolGroups": true,
+    "adminQueries": false,
+    "triggers": {},
+    "hostedUI": true,
+    "hostedUIDomainName": "yoyobrain-reactnative",
+    "authProvidersUserPool": [
+      "Facebook",
+      "Google",
+      "LoginWithAmazon",
+      "SignInWithApple"
+    ],
+    "hostedUIProviderMeta": "[{\"ProviderName\":\"Facebook\",\"authorize_scopes\":\"email,public_profile\",\"AttributeMapping\":{\"email\":\"email\",\"name\":\"name\",\"username\":\"id\"}},{\"ProviderName\":\"Google\",\"authorize_scopes\":\"openid email profile\",\"AttributeMapping\":{\"email\":\"email\",\"name\":\"name\",\"username\":\"sub\"}},{\"ProviderName\":\"LoginWithAmazon\",\"authorize_scopes\":\"profile profile:user_id\",\"AttributeMapping\":{\"email\":\"email\",\"name\":\"name\",\"username\":\"user_id\"}},{\"ProviderName\":\"SignInWithApple\",\"authorize_scopes\":\"email name\",\"AttributeMapping\":{\"email\":\"email\",\"name\":\"name\"}}]",
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://reactnative.yoyobrain.com/signin/\",\"http://localhost/signin/\"],\"LogoutURLs\":[\"https://reactnative.yoyobrain.com/signout/\",\"http://localhost/signout/\"]}",
+    "userPoolGroupList": [
+      "loggedin"
+    ],
+    "serviceName": "Cognito",
+    "usernameCaseSensitive": false,
+    "useEnabledMfas": true
+  }
+}

@@ -5,3 +5,7 @@
 
 ## Add Amplify
 1. amplify init
+
+## Add Cognito Auth to Amplify
+1. amplify add auth
+2. amplify push
