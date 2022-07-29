@@ -1,21 +1,5 @@
 {
   "auth": {
-    "userPoolGroups": {
-      "service": "Cognito-UserPool-Groups",
-      "providerPlugin": "awscloudformation",
-      "dependsOn": [
-        {
-          "category": "auth",
-          "resourceName": "yoyobrainreactnative",
-          "attributes": [
-            "UserPoolId",
-            "AppClientIDWeb",
-            "AppClientID",
-            "IdentityPoolId"
-          ]
-        }
-      ]
-    },
     "yoyobrainreactnative": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
@@ -23,25 +7,21 @@
       "customAuth": false,
       "frontendAuthConfig": {
         "socialProviders": [
-          "FACEBOOK",
-          "GOOGLE",
-          "AMAZON",
-          "APPLE"
+          "GOOGLE"
         ],
         "usernameAttributes": [
           "EMAIL"
         ],
         "signupAttributes": [
-          "EMAIL",
           "NAME"
         ],
         "passwordProtectionSettings": {
-          "passwordPolicyMinLength": "8",
+          "passwordPolicyMinLength": 8,
           "passwordPolicyCharacters": [
             "REQUIRES_LOWERCASE",
-            "REQUIRES_UPPERCASE",
             "REQUIRES_NUMBERS",
-            "REQUIRES_SYMBOLS"
+            "REQUIRES_SYMBOLS",
+            "REQUIRES_UPPERCASE"
           ]
         },
         "mfaConfiguration": "OPTIONAL",

@@ -13,12 +13,7 @@
     },
     "categories": {
       "auth": {
-        "yoyobrainreactnative": {
-          "facebookAppId": "10833651274",
-          "googleClientId": "127287383518-ihn9fk0iorp602cfbip63mleisujhm91.apps.googleusercontent.com",
-          "amazonAppId": "amzn1.application-oa2-client.481ba09b1b0b4ddca40935e2b553f60f",
-          "appleAppId": "com.yoyobrain.oauth"
-        }
+        "yoyobrainreactnative": {}
       }
     }
   }
