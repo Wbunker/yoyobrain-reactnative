@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {Controller} from 'react-hook-form';
 import {View, StyleSheet, TextInput, Text} from 'react-native';
-import { theme } from '../styles/theme';
+import { ThemeContext } from '../styles/theme-context';
 
 const CustomInput = ({
   control,
@@ -10,6 +10,33 @@ const CustomInput = ({
   placeholder,
   secureTextEntry,
 }) => {
+
+  const themeFromContext = useContext(ThemeContext)
+
+  const styles = StyleSheet.create({
+    container: {
+      backgroundColor: 'white',
+      width: '100%',
+      borderColor: themeFromContext.colors.grey,
+      borderWidth: themeFromContext.spacing.xxxs,
+      borderRadius: themeFromContext.spacing.xs,
+      paddingHorizontal: themeFromContext.spacing.s,
+      marginVertical: themeFromContext.spacing.xs,
+    },
+    error: {
+      borderColor: themeFromContext.colors.failure,
+    },
+    errorText: {
+      color: themeFromContext.colors.failure,
+      alignSelf: 'stretch',
+    },
+  
+    input: {
+      fontSize: themeFromContext.textVariants.body.fontSize
+    },
+  });
+  
+
   return (
     <Controller
       control={control}
@@ -38,27 +65,5 @@ const CustomInput = ({
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: 'white',
-    width: '100%',
-    borderColor: '#e8e8e8',
-    borderWidth: 1,
-    borderRadius: 5,
-    paddingHorizontal: 10,
-    marginVertical: 5,
-  },
-  error: {
-    borderColor: 'red',
-  },
-  errorText: {
-    color: 'red',
-    alignSelf: 'stretch',
-  },
-
-  input: {
-    fontSize: theme.textVariants.body.fontSize
-  },
-});
 
 export default CustomInput;

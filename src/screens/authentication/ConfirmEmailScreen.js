@@ -7,10 +7,11 @@ import CustomButton from '../../components/CustomButton';
 import CustomInput from '../../components/CustomInput';
 
 const ConfirmEmailScreen = () => {
+
   const route = useRoute();
   const {control, handleSubmit, watch} = useForm({
     defaultValues: {
-      username: route?.params?.username,
+      username: route?.params?.email,
     },
   });
   const username = watch('username');
@@ -44,18 +45,10 @@ const ConfirmEmailScreen = () => {
         <Text style={styles.title}>Confirm your email</Text>
         <CustomInput
           name="username"
-          placeholder="Username"
+          placeholder="Email"
           control={control}
           rules={{
-            required: 'Username is required',
-            minLength: {
-              value: 3,
-              message: 'Username should be at least 3 characters long',
-            },
-            maxLength: {
-              value: 24,
-              message: 'Username should be max 24 characters long',
-            },
+            required: 'Email is required'
           }}
         />
         <CustomInput

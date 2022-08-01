@@ -1,13 +1,20 @@
 import React from 'react';
-import CustomButton from './CustomButton';
+import CustomButton from '../../../components/CustomButton';
+import Constants from "expo-constants";
+import useAuth from '../../../hooks/useAuth';
+
+const secrets = Constants?.manifest?.extra || Constants?.manifest2?.extra;
 
 function SocialSigninButtons() {
+
+  const { signInWithGoogle } = useAuth();
+
   const onSignInFacebookPressed = () => {
     console.warn('Sign In Facebook');
   };
 
   const onSignInGooglePressed = () => {
-    console.warn('Sign In Google');
+    signInWithGoogle()
   };
 
   const onSignInApplePressed = () => {

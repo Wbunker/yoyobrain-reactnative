@@ -10,6 +10,7 @@ import ConfirmEmailScreen from './screens/authentication/ConfirmEmailScreen';
 import NewPasswordScreen from './screens/authentication/NewPasswordScreen';
 import ForgotPasswordScreen from './screens/authentication/ForgotPasswordScreen';
 import HomeScreen from './screens/HomeScreen';
+import useAuth from './hooks/useAuth';
 
 const Stack = createStackNavigator();
 
@@ -22,38 +23,10 @@ const styles = StyleSheet.create({
 });
 
 const Navigation = () => {
-  const [user, setUser] = useState(undefined);
 
-  const checkUser = () => {
-    Auth.currentAuthenticatedUser({bypassCache: true})
-      .then(authUser => {
-        setUser(authUser);
-      })
-      .catch(() => {
-        setUser(null);
-      });
-  };
-
-  useEffect(() => {
-    checkUser();
-  }, []);
-
-  useEffect(() => {
-    const listener = (data) => {
-      if (['signIn', 'signOut'].includes(data.payload.event)) {
-        checkUser();
-      }
-    };
-
-    Hub.listen('auth', listener);
-    
-    return () => {
-      Hub.remove('auth', listener);
-    }
-    
-  }, []);
-
-  if (user === undefined) {
+  const { user, loading } = useAuth();
+  console.log('loading', loading);
+  if (user === undefined || loading) {
     return (
       <View style={styles.loading}>
         <ActivityIndicator />
@@ -64,7 +37,7 @@ const Navigation = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false}}>
-        {user === null ? (
+        {user === null  ? (
           <>
             <Stack.Screen name="SignIn" component={SignInScreen} />
             <Stack.Screen name="SignUp" component={SignUpScreen} />

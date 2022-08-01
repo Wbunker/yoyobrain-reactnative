@@ -5,7 +5,7 @@ import {useForm} from 'react-hook-form';
 import {View, StyleSheet, ScrollView, Text, Alert} from 'react-native';
 import CustomButton from '../../components/CustomButton';
 import CustomInput from '../../components/CustomInput';
-import SocialSigninButtons from '../../components/SocialSigninButtons';
+import SocialSigninButtons from './components/SocialSigninButtons';
 
 const SignUpScreen = () => {
   const {control, handleSubmit, watch} = useForm();
@@ -15,24 +15,25 @@ const SignUpScreen = () => {
   const navigation = useNavigation();
 
   const onRegisterPressed = async data => {
-    const {username, password, email, name} = data;
+    const {password, email, name} = data;
     if (loading) {
       return;
     }
     setLoading(true);
-
     // validate user
     try {
       await Auth.signUp({
-        username,
+        username: email,
         password,
         attributes: {
           email,
-          name,
-          prefered_username: username,
+          name
         },
+        autoSignIn: {
+          enabled: true,
+        }
       });
-      navigation.navigate('ConfirmEmail', {username});
+      navigation.navigate('ConfirmEmail', {email});
     } catch (e) {
       Alert.alert('Oops', e.message);
     }

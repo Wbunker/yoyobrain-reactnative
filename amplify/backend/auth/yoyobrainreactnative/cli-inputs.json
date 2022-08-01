@@ -71,6 +71,6 @@
       "Google"
     ],
     "hostedUIProviderMeta": "[{\"ProviderName\":\"Google\",\"authorize_scopes\":\"openid profile\",\"AttributeMapping\":{\"name\":\"name\",\"username\":\"sub\"}}]",
-    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://localhost:3000/signin\"],\"LogoutURLs\":[\"https://localhost:3000/signout\"]}"
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost:19006/signin\",\"https://dev.dd6vgmbujk3rj.amplifyapp.com\",\"exp://exp.host/@wbunker/yoyobrain-reactnative\",\"exp://192.168.1.55:19000/--/signin\"],\"LogoutURLs\":[\"http://localhost:19006/signout\",\"https://dev.dd6vgmbujk3rj.amplifyapp.com\",\"exp://exp.host/@wbunker/yoyobrain-reactnative\",\"exp://192.168.1.55:19000/--/signout\"]}"
   }
 }

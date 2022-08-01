@@ -6,7 +6,7 @@ import {View, Image, StyleSheet, ScrollView, Alert} from 'react-native';
 import Logo from '../../../assets/images/Logo.gif';
 import CustomButton from '../../components/CustomButton';
 import CustomInput from '../../components/CustomInput';
-import SocialSigninButtons from '../../components/SocialSigninButtons';
+import SocialSigninButtons from './components/SocialSigninButtons';
 
 const SignInScreen = () => {
   const navigation = useNavigation();
@@ -44,9 +44,9 @@ const SignInScreen = () => {
         <Image source={Logo} style={styles.logo} risizeMode="contain" />
         <CustomInput
           name="username"
-          placeholder="Username"
+          placeholder="Email"
           control={control}
-          rules={{required: 'Username is required'}}
+          rules={{required: 'Email is required'}}
         />
         <CustomInput
           name="password"

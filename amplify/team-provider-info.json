@@ -14,6 +14,12 @@
     "categories": {
       "auth": {
         "yoyobrainreactnative": {}
+      },
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "dd6vgmbujk3rj",
+          "type": "manual"
+        }
       }
     }
   }

@@ -10,18 +10,19 @@ const CustomButton = ({onPress, text, type = 'Primary', bgColor, fgColor}) => {
   const styles = StyleSheet.create({
     container: {
       width: '100%',
-      borderColor: '#e8e8e8',
-      padding: 15,
+      borderColor:  themeFromContext.colors.grey,
+      padding: themeFromContext.spacing.m,
       alignItems: 'center',
-      borderRadius: 5,
-      marginVertical: 5,
+      borderRadius: themeFromContext.spacing.s,
+      marginVertical: themeFromContext.spacing.xs,
     },
     container_Primary: {
-      backgroundColor: '#3b71f3',
+      backgroundColor: themeFromContext.colors.primary,
     },
     container_Secondary: {
-      borderColor: '#3b71f3',
-      borderWidth: 2,
+      backgroundColor: themeFromContext.colors.secondary,
+      borderColor: themeFromContext.colors.primary,
+      borderWidth: themeFromContext.spacing.xxs,
     },
     container_Terciary: {},
     text: {
@@ -29,13 +30,13 @@ const CustomButton = ({onPress, text, type = 'Primary', bgColor, fgColor}) => {
       fontSize: themeFromContext.textVariants.body.fontSize,
     },
     text_Primary: {
-      color: 'white',
+      color: themeFromContext.colors.background,
     },
     text_Secondary: {
-      color: 'blue',
+      color: themeFromContext.colors.secondary,
     },
     text_Terciary: {
-      color: 'grey',
+      color: themeFromContext.colors.foreground,
     },
   });
   
