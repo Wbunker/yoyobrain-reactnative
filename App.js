@@ -12,7 +12,7 @@ import * as WebBrowser from 'expo-web-browser';
 import * as Linking from 'expo-linking';
 
 LogBox.ignoreLogs(["EventEmitter.removeListener"]);
-// window.LOG_LEVEL = 'DEBUG'
+window.LOG_LEVEL = 'DEBUG'
 
 
 
@@ -23,11 +23,11 @@ const App = () => {
   const {setLoading} = useAuth();
 
   const isLocalhost = Boolean(
-    window.location.hostname === "localhost" ||
+    window?.location?.hostname === "localhost" ||
       // [::1] is the IPv6 localhost address.
-      window.location.hostname === "[::1]" ||
+      window?.location?.hostname === "[::1]" ||
       // 127.0.0.1/8 is considered localhost for IPv4.
-      window.location.hostname.match(
+      window?.location?.hostname?.match(
         /^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/
       )
   );
