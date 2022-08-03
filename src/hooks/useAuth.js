@@ -25,14 +25,14 @@ import { ResponseType } from 'expo-auth-session';
     const [loadingInitial, setLoadingInitial] = useState(true);
     const [loading, setLoading] = useState(false);
   
-    const [_request, googleLoginResult, promptGoogle] = Google.useAuthRequest({
-      androidClientId: secrets?.androidClientId ?? process.env.GOOGLE_ANDROID_CLIENT_ID,
-      iosClientId: secrets?.iosClientId ?? process.env.GOOGLE_IOS_CLIENT_ID,
-      expoClientId: secrets?.expoClientId ?? process.env.GOOGLE_EXPO_CLIENT_ID,
-      webClientId: secrets?.webClientId ?? process.env.GOOGLE_WEB_CLIENT_ID,
-      scopes: ["profile", "email", "openid"],
-      responseType: responseType,
-    });
+    // const [_request, googleLoginResult, promptGoogle] = Google.useAuthRequest({
+    //   androidClientId: secrets?.androidClientId ?? process.env.GOOGLE_ANDROID_CLIENT_ID,
+    //   iosClientId: secrets?.iosClientId ?? process.env.GOOGLE_IOS_CLIENT_ID,
+    //   expoClientId: secrets?.expoClientId ?? process.env.GOOGLE_EXPO_CLIENT_ID,
+    //   webClientId: secrets?.webClientId ?? process.env.GOOGLE_WEB_CLIENT_ID,
+    //   scopes: ["profile", "email", "openid"],
+    //   responseType: responseType,
+    // });
           
 
     const logout = () => {

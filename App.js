@@ -75,6 +75,13 @@ const App = () => {
 
   useEffect(() => {
 
+    if (window?.LOG_LEVEL === 'DEBUG') {
+      console.log('******************************************************')
+      console.log('redirectSignIn', redirectSignIn())
+      console.log('redirectSignOut', redirectSignOut())  
+      console.log('******************************************************')
+    }
+
     let updatedAwsConfig = {
       ...awsconfig,
       oauth: {
