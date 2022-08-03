@@ -45,27 +45,27 @@ const App = () => {
   }
 
   const redirectSignIn = () => {
-    const [
-        webLocalRedirectSignIn,
-        webProductionRedirectSignIn
-      ] = awsconfig.oauth.redirectSignIn.split(",");
+    // const [
+    //     webLocalRedirectSignIn,
+    //     webProductionRedirectSignIn
+    //   ] = awsconfig.oauth.redirectSignIn.split(",");
       
-    if (Platform.OS === 'web') {
-      console.log(isLocalhost ? webLocalRedirectSignIn : webProductionRedirectSignIn)
-      return isLocalhost ? webLocalRedirectSignIn : webProductionRedirectSignIn;
-    }
+    // if (Platform.OS === 'web') {
+    //   console.log(isLocalhost ? webLocalRedirectSignIn : webProductionRedirectSignIn)
+    //   return isLocalhost ? webLocalRedirectSignIn : webProductionRedirectSignIn;
+    // }
   
     return  Linking.createURL('/signin') //phoneLocalRedirectSignIn;
   }
   const redirectSignOut = () => {
-    const [
-        webLocalRedirectSignOut,
-        webProductionRedirectSignOut
-      ] = awsconfig.oauth.redirectSignOut.split(",");
+    // const [
+    //     webLocalRedirectSignOut,
+    //     webProductionRedirectSignOut
+    //   ] = awsconfig.oauth.redirectSignOut.split(",");
           
-    if (Platform.OS === 'web') {
-      return isLocalhost ? webLocalRedirectSignOut : webProductionRedirectSignOut;
-    }
+    // if (Platform.OS === 'web') {
+    //   return isLocalhost ? webLocalRedirectSignOut : webProductionRedirectSignOut;
+    // }
   
     return Linking.createURL('/signout') // phoneLocalRedirectSignOut
   
