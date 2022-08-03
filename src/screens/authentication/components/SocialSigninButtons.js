@@ -2,7 +2,8 @@ import React from 'react';
 import CustomButton from '../../../components/CustomButton';
 import Constants from "expo-constants";
 import useAuth from '../../../hooks/useAuth';
-
+import { Text } from 'react-native';
+import * as Linking from 'expo-linking';
 const secrets = Constants?.manifest?.extra || Constants?.manifest2?.extra;
 
 function SocialSigninButtons() {
@@ -41,6 +42,7 @@ function SocialSigninButtons() {
         bgColor="#E3E3E3"
         fgColor="#363636"
       />
+      <Text>{Linking.createURL('/signin')}</Text>
     </>
   );
 }
